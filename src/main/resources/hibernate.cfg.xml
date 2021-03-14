@@ -21,5 +21,7 @@
         <mapping class="ru.job4j.toone.FirstUser" />
         <mapping class="ru.job4j.many.SecondRole"/>
         <mapping class="ru.job4j.many.SecondUser"/>
+        <mapping class="ru.job4j.auto.CarBrand"/>
+        <mapping class="ru.job4j.auto.CarModel"/>
     </session-factory>
 </hibernate-configuration>

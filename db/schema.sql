@@ -24,3 +24,13 @@ create table s_user (
                         id serial primary key,
                         name varchar(2000)
 );
+
+create table car_brand (
+                        id serial primary key,
+                        name varchar(2000)
+);
+
+create table car_model (
+                        id serial primary key,
+                        name varchar(2000)
+);
