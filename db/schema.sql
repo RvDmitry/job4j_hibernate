@@ -4,13 +4,23 @@ create table cars(
     created timestamp
 );
 
-create table j_role (
+create table f_role (
                         id serial primary key,
                         name varchar(2000)
 );
 
-create table j_user (
+create table f_user (
                         id serial primary key,
                         name varchar(2000),
-                        role_id int not null references j_role(id)
+                        role_id int not null references f_role(id)
+);
+
+create table s_role (
+                        id serial primary key,
+                        name varchar(2000)
+);
+
+create table s_user (
+                        id serial primary key,
+                        name varchar(2000)
 );

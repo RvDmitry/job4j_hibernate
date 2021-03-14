@@ -10,16 +10,16 @@ import java.util.Objects;
  * @version 1
  */
 @Entity
-@Table(name = "j_role")
-public class Role {
+@Table(name = "f_role")
+public class FirstRole {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     private String name;
 
-    public static Role of(String name) {
-        Role role = new Role();
+    public static FirstRole of(String name) {
+        FirstRole role = new FirstRole();
         role.name = name;
         return role;
     }
@@ -48,7 +48,7 @@ public class Role {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        Role role = (Role) o;
+        FirstRole role = (FirstRole) o;
         return id == role.id;
     }
 

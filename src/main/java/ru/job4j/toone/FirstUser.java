@@ -10,8 +10,8 @@ import java.util.Objects;
  * @version 1
  */
 @Entity
-@Table(name = "j_user")
-public class User {
+@Table(name = "f_user")
+public class FirstUser {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -20,10 +20,10 @@ public class User {
 
     @ManyToOne
     @JoinColumn(name = "role_id")
-    private Role role;
+    private FirstRole role;
 
-    public static User of(String name, Role role) {
-        User user = new User();
+    public static FirstUser of(String name, FirstRole role) {
+        FirstUser user = new FirstUser();
         user.name = name;
         user.role = role;
         return user;
@@ -45,11 +45,11 @@ public class User {
         this.name = name;
     }
 
-    public Role getRole() {
+    public FirstRole getRole() {
         return role;
     }
 
-    public void setRole(Role role) {
+    public void setRole(FirstRole role) {
         this.role = role;
     }
 
@@ -61,7 +61,7 @@ public class User {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        User user = (User) o;
+        FirstUser user = (FirstUser) o;
         return id == user.id;
     }
 
