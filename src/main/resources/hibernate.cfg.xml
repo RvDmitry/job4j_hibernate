@@ -17,11 +17,13 @@
         <property name="hibernate.hbm2ddl.auto">update</property>
 
         <mapping class="ru.job4j.config.Car" />
-        <mapping class="ru.job4j.toone.FirstRole" />
-        <mapping class="ru.job4j.toone.FirstUser" />
+        <mapping class="ru.job4j.toone.FirstRole"/>
+        <mapping class="ru.job4j.toone.FirstUser"/>
         <mapping class="ru.job4j.many.SecondRole"/>
         <mapping class="ru.job4j.many.SecondUser"/>
         <mapping class="ru.job4j.auto.CarBrand"/>
         <mapping class="ru.job4j.auto.CarModel"/>
+        <mapping class="ru.job4j.manytomany.Address"/>
+        <mapping class="ru.job4j.manytomany.Person"/>
     </session-factory>
 </hibernate-configuration>
