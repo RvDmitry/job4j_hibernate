@@ -27,5 +27,7 @@
         <mapping class="ru.job4j.manytomany.Person"/>
         <mapping class="ru.job4j.publish.Book"/>
         <mapping class="ru.job4j.publish.Author"/>
+        <mapping class="ru.job4j.lazy.Category"/>
+        <mapping class="ru.job4j.lazy.Task"/>
     </session-factory>
 </hibernate-configuration>
