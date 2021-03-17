@@ -29,5 +29,7 @@
         <mapping class="ru.job4j.publish.Author"/>
         <mapping class="ru.job4j.lazy.Category"/>
         <mapping class="ru.job4j.lazy.Task"/>
+        <mapping class="ru.job4j.lazy.auto.Model"/>
+        <mapping class="ru.job4j.lazy.auto.Brand"/>
     </session-factory>
 </hibernate-configuration>
