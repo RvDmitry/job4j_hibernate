@@ -25,6 +25,8 @@
         <mapping class="ru.job4j.auto.CarModel"/>
         <mapping class="ru.job4j.manytomany.Address"/>
         <mapping class="ru.job4j.manytomany.Person"/>
+        <mapping class="ru.job4j.manytomany.model.Human"/>
+        <mapping class="ru.job4j.manytomany.model.City"/>
         <mapping class="ru.job4j.publish.Book"/>
         <mapping class="ru.job4j.publish.Author"/>
         <mapping class="ru.job4j.lazy.Category"/>
