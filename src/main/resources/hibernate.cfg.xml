@@ -17,7 +17,7 @@
         <property name="hibernate.hbm2ddl.auto">update</property>
         <property name="hibernate.jdbc.time_zone">UTC</property>
 
-        <mapping class="ru.job4j.config.Car"/>
+        <mapping class="ru.job4j.config.AutoCar"/>
         <mapping class="ru.job4j.toone.FirstRole"/>
         <mapping class="ru.job4j.toone.FirstUser"/>
         <mapping class="ru.job4j.many.SecondRole"/>

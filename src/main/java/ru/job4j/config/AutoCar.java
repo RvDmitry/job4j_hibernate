@@ -12,7 +12,7 @@ import java.util.Objects;
  */
 @Entity
 @Table(name = "cars")
-public class Car {
+public class AutoCar {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -23,8 +23,8 @@ public class Car {
 
     private String owner;
 
-    public static Car of(String model, Timestamp created, String owner) {
-        Car car = new Car();
+    public static AutoCar of(String model, Timestamp created, String owner) {
+        AutoCar car = new AutoCar();
         car.model = model;
         car.created = created;
         car.owner = owner;
@@ -71,7 +71,7 @@ public class Car {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        Car car = (Car) o;
+        AutoCar car = (AutoCar) o;
         return id == car.id;
     }
 
