@@ -31,6 +31,9 @@ public class Candidate {
      */
     private int salary;
 
+    @OneToOne
+    private Base base;
+
     /**
      * Фабрика создает кандидата.
      * @param name Имя.
@@ -110,6 +113,14 @@ public class Candidate {
         this.salary = salary;
     }
 
+    public Base getBase() {
+        return base;
+    }
+
+    public void setBase(Base base) {
+        this.base = base;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -129,10 +140,12 @@ public class Candidate {
 
     @Override
     public String toString() {
-        return "Candidate: "
-                + "id= " + id
-                + ", name= '" + name + '\''
-                + ", experience= " + experience
-                + ", salary= " + salary;
+        return "Candidate{"
+                + "id=" + id
+                + ", name='" + name + '\''
+                + ", experience=" + experience
+                + ", salary=" + salary
+                + ", base=" + base
+                + '}';
     }
 }
