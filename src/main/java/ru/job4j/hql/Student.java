@@ -22,6 +22,9 @@ public class Student {
 
     private String city;
 
+    @OneToOne
+    private Account account;
+
     public static Student of(String name, int age, String city) {
         Student student = new Student();
         student.name = name;
@@ -62,6 +65,14 @@ public class Student {
         this.city = city;
     }
 
+    public Account getAccount() {
+        return account;
+    }
+
+    public void setAccount(Account account) {
+        this.account = account;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -81,6 +92,12 @@ public class Student {
 
     @Override
     public String toString() {
-        return String.format("Student: id=%s, name=%s, age=%s, city=%s", id, name, age, city);
+        return "Student{"
+                + "id=" + id
+                + ", name='" + name + '\''
+                + ", age=" + age
+                + ", city='" + city + '\''
+                + ", account=" + account
+                + '}';
     }
 }
