@@ -40,9 +40,9 @@ public class OrdersStoreTest {
         List<Order> all = (List<Order>) store.findAll();
         var received = all.stream().filter(order -> order.getId() == original.getId()).findFirst();
         assertTrue(received.isPresent());
-        assertEquals(received.get().getId(), original.getId());
-        assertEquals(received.get().getName(), original.getName());
-        assertEquals(received.get().getDescription(), original.getDescription());
+        assertEquals(original.getId(), received.get().getId());
+        assertEquals(original.getName(), received.get().getName());
+        assertEquals(original.getDescription(), received.get().getDescription());
     }
 
     @Test
@@ -50,9 +50,9 @@ public class OrdersStoreTest {
         OrdersStore store = new OrdersStore(pool);
         Order original = store.save(Order.of("name2", "description2"));
         Order received = store.findById(original.getId());
-        assertEquals(received.getId(), original.getId());
-        assertEquals(received.getName(), original.getName());
-        assertEquals(received.getDescription(), original.getDescription());
+        assertEquals(original.getId(), received.getId());
+        assertEquals(original.getName(), received.getName());
+        assertEquals(original.getDescription(), received.getDescription());
     }
 
     @Test
@@ -60,9 +60,9 @@ public class OrdersStoreTest {
         OrdersStore store = new OrdersStore(pool);
         Order original = store.save(Order.of("name3", "description3"));
         Order received = store.findByName(original.getName());
-        assertEquals(received.getId(), original.getId());
-        assertEquals(received.getName(), original.getName());
-        assertEquals(received.getDescription(), original.getDescription());
+        assertEquals(original.getId(), received.getId());
+        assertEquals(original.getName(), received.getName());
+        assertEquals(original.getDescription(), received.getDescription());
     }
 
     @Test
@@ -72,7 +72,7 @@ public class OrdersStoreTest {
         Order second = new Order(first.getId(), "name5", "description5", first.getCreated());
         assertTrue(store.update(second));
         assertNull(store.findByName(first.getName()));
-        assertEquals(store.findById(first.getId()).getName(), second.getName());
-        assertEquals(store.findById(first.getId()).getDescription(), second.getDescription());
+        assertEquals(second.getName(), store.findById(first.getId()).getName());
+        assertEquals(second.getDescription(), store.findById(first.getId()).getDescription());
     }
 }
