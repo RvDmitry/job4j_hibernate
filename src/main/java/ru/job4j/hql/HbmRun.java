@@ -32,8 +32,8 @@ public class HbmRun {
             candidates.forEach(System.out::println);
             Candidate candidate = findCandidateById(1, sf);
             System.out.println(candidate);
-            candidate = findCandidateByName("Petr", sf);
-            System.out.println(candidate);
+            candidates = findCandidateByName("Petr", sf);
+            candidates.forEach(System.out::println);
             updateCandidateById(1, 4, 150, sf);
             deleteCandidateById(3, sf);
         }  catch (Exception e) {
@@ -92,20 +92,20 @@ public class HbmRun {
     }
 
     /**
-     * Метод находит кандидата по его имени.
+     * Метод находит кандидатов по имени.
      * @param name Имя кандидата.
      * @param sf Экземпляр конфигурации.
      * @return Кандидат.
      */
-    public static Candidate findCandidateByName(String name, SessionFactory sf) {
+    public static List<Candidate> findCandidateByName(String name, SessionFactory sf) {
         Session session = sf.openSession();
         session.beginTransaction();
         Query query = session.createQuery("from Candidate c where c.name = :fName");
         query.setParameter("fName", name);
-        Candidate candidate = (Candidate) query.uniqueResult();
+        List candidates = query.list();
         session.getTransaction().commit();
         session.close();
-        return candidate;
+        return candidates;
     }
 
     /**
